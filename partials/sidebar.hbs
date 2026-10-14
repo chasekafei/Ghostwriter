@@ -49,60 +49,41 @@
 				</a>
 			</div>
 
-			<div class="links-of-author motion-element">
-				<span class="links-of-author-item">
-					<a href="https://twitter.com/chasekafei" target="_blank" rel="noopener">
-						{{> icon icon="twitter"}} Twitter
-					</a>
-				</span>
-				<span class="links-of-author-item">
-					<a href="https://www.instagram.com/chasekafei/" target="_blank" rel="noopener">
-						{{> icon icon="instagram"}} Instagram
-					</a>
-				</span>
-				<span class="links-of-author-item">
-					<a href="http://weibo.com/207000070" target="_blank" rel="noopener">
-						{{> icon icon="weibo"}} Weibo
-					</a>
-				</span>
-				<span class="links-of-author-item">
-					<a href="http://steamcommunity.com/id/xiaotee/" target="_blank" rel="noopener">
-						{{> icon icon="steam"}} Steam
-					</a>
-				</span>
-			</div>
+			{{#if @custom.sidebar_twitter}}
+				{{> sidebar-social}}
+			{{else if @custom.sidebar_instagram}}
+				{{> sidebar-social}}
+			{{else if @custom.sidebar_weibo}}
+				{{> sidebar-social}}
+			{{else if @custom.sidebar_steam}}
+				{{> sidebar-social}}
+			{{/if}}
 
-			<div class="links-of-author motion-element">
-				<p class="site-author-name">Friends</p>
-				<span class="links-of-author-item">
-					<a href="http://www.xiaoten.com/" target="_blank" rel="noopener">叫我小十</a>
-				</span>
-				<span class="links-of-author-item">
-					<a href="http://www.chyfh.com/" target="_blank" rel="noopener">茶余饭后</a>
-				</span>
-				<span class="links-of-author-item">
-					<a href="http://www.isvee.com/" target="_blank" rel="noopener">三月有晴天</a>
-				</span>
-			</div>
+			{{#if @custom.sidebar_friends}}
+				<div class="links-of-author motion-element">
+					<p class="site-author-name">Friends</p>
+					{{#foreach (split @custom.sidebar_friends separator=";;")}}
+						{{#split this separator="|" as |pair|}}
+							<span class="links-of-author-item">
+								<a href="{{lookup pair 1}}" target="_blank" rel="noopener">{{lookup pair 0}}</a>
+							</span>
+						{{/split}}
+					{{/foreach}}
+				</div>
+			{{/if}}
 
-			<div class="links-of-author motion-element">
-				<p class="site-author-name">Links</p>
-				<span class="links-of-author-item">
-					<a href="https://blog.it2048.cn/" target="_blank" rel="noopener">我是大熊</a>
-				</span>
-				<span class="links-of-author-item">
-					<a href="http://www.taoweng.site/" target="_blank" rel="noopener">前端桃园</a>
-				</span>
-				<span class="links-of-author-item">
-					<a href="https://lockshell.com/" target="_blank" rel="noopener">络壳</a>
-				</span>
-				<span class="links-of-author-item">
-					<a href="https://blog.caijunyi.net/" target="_blank" rel="noopener">乐趣博客</a>
-				</span>
-				<span class="links-of-author-item">
-					<a href="https://amonxu.com" target="_blank" rel="noopener">逐鹿IT,猛猛如玉</a>
-				</span>
-			</div>
+			{{#if @custom.sidebar_links}}
+				<div class="links-of-author motion-element">
+					<p class="site-author-name">Links</p>
+					{{#foreach (split @custom.sidebar_links separator=";;")}}
+						{{#split this separator="|" as |pair|}}
+							<span class="links-of-author-item">
+								<a href="{{lookup pair 1}}" target="_blank" rel="noopener">{{lookup pair 0}}</a>
+							</span>
+						{{/split}}
+					{{/foreach}}
+				</div>
+			{{/if}}
 		</section>
 	</div>
 </aside>

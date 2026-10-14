@@ -1,0 +1,30 @@
+<div class="links-of-author motion-element">
+	{{#if @custom.sidebar_twitter}}
+		<span class="links-of-author-item">
+			<a href="{{@custom.sidebar_twitter}}" target="_blank" rel="noopener">
+				{{> icon icon="twitter"}} Twitter
+			</a>
+		</span>
+	{{/if}}
+	{{#if @custom.sidebar_instagram}}
+		<span class="links-of-author-item">
+			<a href="{{@custom.sidebar_instagram}}" target="_blank" rel="noopener">
+				{{> icon icon="instagram"}} Instagram
+			</a>
+		</span>
+	{{/if}}
+	{{#if @custom.sidebar_weibo}}
+		<span class="links-of-author-item">
+			<a href="{{@custom.sidebar_weibo}}" target="_blank" rel="noopener">
+				{{> icon icon="weibo"}} Weibo
+			</a>
+		</span>
+	{{/if}}
+	{{#if @custom.sidebar_steam}}
+		<span class="links-of-author-item">
+			<a href="{{@custom.sidebar_steam}}" target="_blank" rel="noopener">
+				{{> icon icon="steam"}} Steam
+			</a>
+		</span>
+	{{/if}}
+</div>

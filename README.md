@@ -18,6 +18,25 @@
 - 评论可以在后台选 Ghost、Gitalk 或 Remark42，默认不加载。搜索用的是 Ghost 自带的。
 - 原版是针对英文排版的主题，我重新针对中文做了字体和排版的优化。
 
+## 配置项
+
+通过配置项来控制主题上的部分内容展示。
+1. 选择评论服务及参数：Ghost 自带评论 / Gitalk / Remark
+2. 配置侧边栏数据：社媒、好友、友链等
+
+配置方法：
+
+在 Ghost 后台打开当前主题的设置。侧边栏相关的字段在全站一组，评论在文章一组。留空的项目不会显示。
+
+- 社交链接：直接填写完整网址：`sidebar_twitter`、`sidebar_instagram`、`sidebar_weibo`、`sidebar_steam`。
+- Friends 和 Links：每个名字和网址为一组，每组之间用 `;;` 隔开，名字和网址之间用 `|` 隔开，分隔符两侧不要加空格。示例：
+
+```text
+MouT.me|https://example.com/;;Jeremy|https://example.org/
+```
+
+名字或网址里不要再出现 `;;` 或 `|`。
+
 ## 原作者
 
 主题最早是 Rory Gibson 写的，仓库在 [roryg/ghostwriter](https://github.com/roryg/ghostwriter)，许可证是 MIT。这里是在那个版本上改的，`LICENSE.txt` 里仍然留着他的版权声明。

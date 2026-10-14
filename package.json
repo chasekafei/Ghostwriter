@@ -63,6 +63,36 @@
                 "default": "chasekafei",
                 "group": "post",
                 "description": "可以初始化评论的 GitHub 用户名。"
+            },
+            "sidebar_twitter": {
+                "type": "text",
+                "default": "",
+                "description": "侧边栏 Twitter 地址。留空则不显示。"
+            },
+            "sidebar_instagram": {
+                "type": "text",
+                "default": "",
+                "description": "侧边栏 Instagram 地址。留空则不显示。"
+            },
+            "sidebar_weibo": {
+                "type": "text",
+                "default": "",
+                "description": "侧边栏微博地址。留空则不显示。"
+            },
+            "sidebar_steam": {
+                "type": "text",
+                "default": "",
+                "description": "侧边栏 Steam 地址。留空则不显示。"
+            },
+            "sidebar_friends": {
+                "type": "text",
+                "default": "",
+                "description": "侧边栏 Friends。每条用 ;; 隔开，名字和网址用 | 隔开，两侧不要空格。例如：名字|https://example.com/;;名字|https://example.org/"
+            },
+            "sidebar_links": {
+                "type": "text",
+                "default": "",
+                "description": "侧边栏 Links。格式与 Friends 相同。"
             }
         }
     }
