@@ -2,7 +2,11 @@
 
 一个排版很干净的 [Ghost](https://github.com/tryghost/ghost) 主题，已修改为兼容 Ghost 6 的版本。
 
+演示：<https://blog.mout.me/>
+
 仓库：<https://github.com/chasekafei/Ghostwriter>
+
+![Ghostwriter](screenshot.png)
 
 ## 特性
 
