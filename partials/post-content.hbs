@@ -93,7 +93,20 @@
                 url: "{{url absolute="true"}}",
                 locale: "zh",
                 simple_view: {{#if @custom.remark42_simple_view}}true{{else}}false{{/if}},
-                no_footer: true
+                no_footer: true,
+                custom_properties: {
+                    "--font-family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif",
+                    "--primary-color": "240, 56, 56",
+                    "--primary-brighter-color": "214, 42, 42",
+                    "--primary-darker-color": "176, 32, 32",
+                    "--color5": "#f0f0f0",
+                    "--color4": "#fafafa",
+                    "--color9": "#F03838",
+                    "--color15": "#F03838",
+                    "--color29": "#F03838",
+                    "--color33": "#d42e2e",
+                    "--line-color": "#e6e6e6"
+                }
             };
         </script>
         <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),d=n.head||n.body;r.type="module",r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+".mjs",d.appendChild(r)}}(remark_config.components||["embed"],document);</script>
