@@ -7,6 +7,63 @@
     },
     "config": {
         "posts_per_page": 5,
-        "card_assets": true
+        "card_assets": true,
+        "custom": {
+            "comment_system": {
+                "type": "select",
+                "options": ["不使用", "Ghost", "Gitalk", "Remark42"],
+                "default": "不使用",
+                "group": "post",
+                "description": "文章底部使用哪一种评论。未选中的评论代码不会加载。"
+            },
+            "remark42_host": {
+                "type": "text",
+                "default": "",
+                "group": "post",
+                "description": "Remark42 服务地址，例如 https://comments.example.com，不要以斜杠结尾。"
+            },
+            "remark42_site_id": {
+                "type": "text",
+                "default": "",
+                "group": "post",
+                "description": "Remark42 的 site_id。"
+            },
+            "remark42_simple_view": {
+                "type": "boolean",
+                "default": false,
+                "group": "post",
+                "description": "Remark42 使用更简的界面。关闭时保留格式工具、订阅和排序。"
+            },
+            "gitalk_client_id": {
+                "type": "text",
+                "default": "",
+                "group": "post",
+                "description": "GitHub OAuth App 的 Client ID。选择 Gitalk 时填写。"
+            },
+            "gitalk_client_secret": {
+                "type": "text",
+                "default": "",
+                "group": "post",
+                "description": "GitHub OAuth App 的 Client Secret。不要写进主题仓库。Gitalk 运行在浏览器里，填上之后仍会出现在网页源代码中。"
+            },
+            "gitalk_owner": {
+                "type": "text",
+                "default": "chasekafei",
+                "group": "post",
+                "description": "存放评论的 GitHub 用户名。"
+            },
+            "gitalk_repo": {
+                "type": "text",
+                "default": "gitalk-repo",
+                "group": "post",
+                "description": "存放评论的 GitHub 仓库。"
+            },
+            "gitalk_admin": {
+                "type": "text",
+                "default": "chasekafei",
+                "group": "post",
+                "description": "可以初始化评论的 GitHub 用户名。"
+            }
+        }
     }
 }

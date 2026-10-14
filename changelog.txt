@@ -5,8 +5,8 @@ Ghostwriter Version 2.0.0
 - Updated the theme for Ghost 6: @site, multiple authors, Koenig wide/full cards
 - Replaced AJAX page loads, jQuery, History.js, Velocity, FitVids and NProgress with one small script
 - Kept the latest-post / browse-posts toggle and the desktop sidebar
-- Added native comments, search, and a sign-in link
-- Removed Gitalk and the Font Awesome CDN
+- Added Ghost search. Comments are chosen in theme settings: none, Ghost, Gitalk, or Remark42. The OAuth client secret stays in Ghost theme settings, not in the repository
+- Removed the Font Awesome CDN
 
 ------------------------------
 Ghostwriter Version 1.9.3
