@@ -1,0 +1,17 @@
+{{!< default}}
+
+<div class="container">
+	{{#post}}
+		<header class="post-header">
+			<h1 class="post-title">{{title}}</h1>
+		</header>
+	{{/post}}
+	{{#get "tags" limit="100" include="count.posts" order="count.posts desc"}}
+		<div class="post-content tag-cloud clearfix">
+			<p class="tag-cloud-description">累计发布了<strong> {{pagination.total}} </strong>个标签</p>
+			{{#foreach tags}}
+				<a class="js-ajax-link tag-item" href="/tag/{{slug}}">{{name}}<span>{{count.posts}}</span></a>
+			{{/foreach}}
+		</div>
+	{{/get}}
+</div>

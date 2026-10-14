@@ -1,0 +1,37 @@
+{{!< default}}
+
+<div class="container">
+    <section class="author-profile">
+        {{#author}}
+            <div class="author-heading">
+                {{#if profile_image}}
+                    <img class="author-avatar" src="{{img_url profile_image size="xs"}}" width="50" height="50" alt="{{name}}">
+                {{/if}}
+
+                <h1 class="author-name">{{name}}</h1>
+            </div>
+
+            <div class="author-meta">
+                <span>{{> icon icon="posts"}} {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+                {{#if location}}<span>{{> icon icon="pin"}}{{location}}</span>{{/if}}
+                {{#if website}}<span>{{> icon icon="link"}}<a href="{{website}}">{{website}}</a></span>{{/if}}
+                {{#foreach social_accounts}}
+                    <span>{{> icon icon="link"}}<a href="{{url}}" target="_blank" rel="noopener">{{name}}</a></span>
+                {{/foreach}}
+                <span>{{> icon icon="rss"}}<a href="{{url}}/rss/">{{name}}</a></span>
+            </div>
+
+            {{#if bio}}
+                <p class="author-bio">{{bio}}</p>
+            {{/if}}
+        {{/author}}
+    </section>
+
+    <ol class="post-list">
+        {{> loop}}
+    </ol>
+
+    <div class="post-navigation">
+        {{pagination}}
+    </div>
+</div>

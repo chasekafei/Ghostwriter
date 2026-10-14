@@ -1,0 +1,108 @@
+<div class="sidebar-toggle" role="button" tabindex="0" aria-expanded="false" aria-label="Open sidebar">
+	<div class="sidebar-toggle-line-wrap">
+		<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+		<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+		<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+	</div>
+</div>
+
+<div class="back-to-top js-jump-top" role="button" tabindex="0" aria-label="Back to top"></div>
+
+<aside id="sidebar" class="sidebar">
+	<div class="sidebar-inner">
+		<section class="site-overview sidebar-panel sidebar-panel-active">
+			<div class="site-author motion-element">
+				{{#if @site.logo}}
+					<img class="site-author-image" src="{{img_url @site.logo size="s"}}" alt="{{@site.title}}">
+				{{/if}}
+				<p class="site-author-name"><a href="{{@site.url}}">{{@site.title}}</a></p>
+				<p class="site-description motion-element">{{@site.description}}</p>
+			</div>
+
+			<nav class="site-state motion-element">
+				<div class="site-state-item site-state-posts">
+					<a class="js-show-index" href="{{@site.url}}/#posts">
+						<span class="site-state-item-count">{{#get "posts" limit="1"}}{{pagination.total}}{{/get}}</span>
+						<span class="site-state-item-name">日志</span>
+					</a>
+				</div>
+
+				<div class="site-state-item site-state-categories">
+					<a href="#">
+						<span class="site-state-item-count">？</span>
+						<span class="site-state-item-name">分类</span>
+					</a>
+				</div>
+
+				<div class="site-state-item site-state-tags">
+					<a href="{{@site.url}}/tags/">
+						<span class="site-state-item-count">{{#get "tags" limit="1"}}{{pagination.total}}{{/get}}</span>
+						<span class="site-state-item-name">标签</span>
+					</a>
+				</div>
+			</nav>
+
+			<div class="feed-link motion-element">
+				<a href="{{@site.url}}/rss/" rel="alternate">
+					{{> icon icon="rss"}}
+					RSS
+				</a>
+			</div>
+
+			<div class="links-of-author motion-element">
+				<span class="links-of-author-item">
+					<a href="https://twitter.com/chasekafei" target="_blank" rel="noopener">
+						{{> icon icon="twitter"}} Twitter
+					</a>
+				</span>
+				<span class="links-of-author-item">
+					<a href="https://www.instagram.com/chasekafei/" target="_blank" rel="noopener">
+						{{> icon icon="instagram"}} Instagram
+					</a>
+				</span>
+				<span class="links-of-author-item">
+					<a href="http://weibo.com/207000070" target="_blank" rel="noopener">
+						{{> icon icon="weibo"}} Weibo
+					</a>
+				</span>
+				<span class="links-of-author-item">
+					<a href="http://steamcommunity.com/id/xiaotee/" target="_blank" rel="noopener">
+						{{> icon icon="steam"}} Steam
+					</a>
+				</span>
+			</div>
+
+			<div class="links-of-author motion-element">
+				<p class="site-author-name">Friends</p>
+				<span class="links-of-author-item">
+					<a href="http://www.xiaoten.com/" target="_blank" rel="noopener">叫我小十</a>
+				</span>
+				<span class="links-of-author-item">
+					<a href="http://www.chyfh.com/" target="_blank" rel="noopener">茶余饭后</a>
+				</span>
+				<span class="links-of-author-item">
+					<a href="http://www.isvee.com/" target="_blank" rel="noopener">三月有晴天</a>
+				</span>
+			</div>
+
+			<div class="links-of-author motion-element">
+				<p class="site-author-name">Links</p>
+				<span class="links-of-author-item">
+					<a href="https://blog.it2048.cn/" target="_blank" rel="noopener">我是大熊</a>
+				</span>
+				<span class="links-of-author-item">
+					<a href="http://www.taoweng.site/" target="_blank" rel="noopener">前端桃园</a>
+				</span>
+				<span class="links-of-author-item">
+					<a href="https://lockshell.com/" target="_blank" rel="noopener">络壳</a>
+				</span>
+				<span class="links-of-author-item">
+					<a href="https://blog.caijunyi.net/" target="_blank" rel="noopener">乐趣博客</a>
+				</span>
+				<span class="links-of-author-item">
+					<a href="https://amonxu.com" target="_blank" rel="noopener">逐鹿IT,猛猛如玉</a>
+				</span>
+			</div>
+		</section>
+	</div>
+</aside>
