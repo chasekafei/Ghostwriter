@@ -327,6 +327,7 @@ button.site-nav-search {
     font-size: 14px;
     font-weight: 700;
     color: $primary;
+    text-transform: uppercase;
     cursor: pointer;
 
     &:hover { color: #424242; }
@@ -438,19 +439,41 @@ html.is-browse #post-index { display: block; }
 }
 
 .post-navigation {
-    display: table;
     margin: 70px auto 100px;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.page-nums {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.newer-posts,
+.older-posts,
+.page-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 32px;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 10px 6px;
 }
 
 .newer-posts,
 .older-posts {
-    float: left;
     background: $primary;
     color: #FEFEFE;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 0 5px;
-    padding: 5px 10px 6px;
     text-transform: uppercase;
 
     &:hover {
@@ -458,7 +481,25 @@ html.is-browse #post-index { display: block; }
     }
 }
 
-.page-number { display: none; }
+.page-num {
+    background: transparent;
+    color: $primary;
+
+    &:hover {
+        background: transparent;
+        color: $secondary;
+    }
+}
+
+.page-num.is-current {
+    background: $primary;
+    color: #FEFEFE;
+
+    &:hover {
+        background: $primary;
+        color: #FEFEFE;
+    }
+}
 
 /* ============================================================ */
 /* Post Index */

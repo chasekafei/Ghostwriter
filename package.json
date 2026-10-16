@@ -6,7 +6,7 @@
         "email": "rg.rorygibson+ghost@gmail.com"
     },
     "config": {
-        "posts_per_page": 5,
+        "posts_per_page": 10,
         "card_assets": true,
         "custom": {
             "comment_system": {

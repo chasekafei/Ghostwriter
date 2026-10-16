@@ -49,6 +49,58 @@
         jumpTop(event);
     });
 
+    document.querySelectorAll('.pagination').forEach(function (nav) {
+        var total = parseInt(nav.getAttribute('data-pages'), 10);
+        var current = parseInt(nav.getAttribute('data-page'), 10);
+        var template = nav.getAttribute('data-template') || '';
+        var slot = nav.querySelector('.page-nums');
+        var firstPage = template.replace(/\/page\/999\/?$/, '/');
+        var firstPath = firstPage;
+
+        try {
+            firstPath = firstPage.indexOf('http') === 0 ? new URL(firstPage).pathname : firstPage;
+        } catch (error) {
+            firstPath = firstPage;
+        }
+
+        var indexList = firstPath === '/' || firstPath === '';
+
+        if (!slot || !total || template.indexOf('999') === -1) {
+            return;
+        }
+
+        if (indexList) {
+            nav.querySelectorAll('a.newer-posts, a.older-posts').forEach(function (link) {
+                if (link.getAttribute('href') === '/' || link.getAttribute('href') === firstPage) {
+                    link.setAttribute('href', '/#posts');
+                }
+            });
+        }
+
+        if (total < 4) {
+            return;
+        }
+
+        for (var number = 1; number <= total; number++) {
+            var href = number === 1
+                ? (indexList ? '/#posts' : firstPage)
+                : template.replace('999', String(number));
+            var item;
+
+            if (number === current) {
+                item = document.createElement('span');
+                item.setAttribute('aria-current', 'page');
+            } else {
+                item = document.createElement('a');
+                item.href = href;
+            }
+
+            item.className = 'page-num' + (number === current ? ' is-current' : '');
+            item.textContent = String(number);
+            slot.appendChild(item);
+        }
+    });
+
     if (!toggle) {
         return;
     }

@@ -1,0 +1,11 @@
+{{#match pages ">" 1}}
+<nav class="pagination" role="navigation" data-page="{{page}}" data-pages="{{pages}}" data-template="{{page_url 999}}">
+    {{#if prev}}
+        <a class="newer-posts" href="{{page_url prev}}"><span aria-hidden="true">&larr;</span> Newer Posts</a>
+    {{/if}}
+    <span class="page-nums"></span>
+    {{#if next}}
+        <a class="older-posts" href="{{page_url next}}">Older Posts <span aria-hidden="true">&rarr;</span></a>
+    {{/if}}
+</nav>
+{{/match}}
